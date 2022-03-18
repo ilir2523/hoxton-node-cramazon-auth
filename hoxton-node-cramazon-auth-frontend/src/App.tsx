@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header";
 import ProductDetails from "./pages/ProductDetails";
 import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import Products from "./pages/Products";
 import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
@@ -30,6 +31,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
 
         <Route path='/signIn' element={<SignIn />} />
+        <Route path='/signUp' element={<SignUp />} />
       </Routes>
     </>
   )

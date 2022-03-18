@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { validateUser, postOrder } from '../functions/Functions.jsx'
 
 
-function ProductDetails({ postOnServerBasket }) {
+function ProductDetails() {
   const params = useParams()
 
   const [product, setProduct] = useState(null)
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    validateUser(setUser)
+  }, [])
+
 
   useEffect(() => {
     fetch(`http://localhost:4001/items/${params.id}`)
@@ -19,10 +26,10 @@ function ProductDetails({ postOnServerBasket }) {
 
   return (
     <section className="product-detail main-wrapper">
-        <img
-          src={product.image}
-          alt={product.title}
-        />
+      <img
+        src={product.image}
+        alt={product.title}
+      />
 
       <div className="product-detail__side">
         <h2>{product.title}</h2>
@@ -32,7 +39,7 @@ function ProductDetails({ postOnServerBasket }) {
         <h1 className="product-price">£{product.price}</h1>
         {/* <!-- Once you click in this button, the user should be redirected to the Basket page --> */}
         <Link to='/basket'>
-          <button onClick={() => postOnServerBasket(product)}>Add to basket</button>
+          <button onClick={() => postOrder(product.id, user.id)}>Add to basket</button>
         </Link>
       </div>
     </section>

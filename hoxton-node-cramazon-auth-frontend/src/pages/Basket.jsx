@@ -4,7 +4,7 @@ function Basket({ basketItems, setBasketItems }) {
 
     function handleChange(item, e) {
         if (Number(e.target.value) > 0) {
-            fetch(`http://localhost:3000/baskets/${item.id}`, {
+            fetch(`http://localhost:4001/baskets/${item.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -14,7 +14,7 @@ function Basket({ basketItems, setBasketItems }) {
                 })
             })
         } else if (Number(e.target.value) === 0) {
-            fetch(`http://localhost:3000/baskets/${item.id}`, {
+            fetch(`http://localhost:4001/baskets/${item.id}`, {
                 method: 'DELETE'
             })
         }

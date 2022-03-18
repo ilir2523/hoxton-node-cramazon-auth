@@ -1,6 +1,7 @@
 import "./SignIn.css"
 import { useEffect, useState } from "react";
 import { validateUser, signIn, signOut } from '../functions/Functions.jsx'
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
   const [user, setUser] = useState(null)
@@ -40,7 +41,7 @@ export default function SignIn() {
           <h5>New to Cramazon?</h5>
         </div>
         <div>
-          <button className="signUp-button" >Create your Cramazon account</button>
+          <button className="signUp-button"> <Link to='/signUp'> Create your Cramazon account </Link></button>
         </div>
       </div>
     )
