@@ -3,7 +3,7 @@ import Product from "../components/Product"
 function Products({products}) {
 
 
-    // console.log(products)
+    console.log(products)
 
     return (
         <section className="products-container main-wrapper">

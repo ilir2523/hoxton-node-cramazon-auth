@@ -128,7 +128,7 @@ img {
 
 .products-container__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
   justify-content: center;
   grid-gap: 2rem;
 }
@@ -200,6 +200,11 @@ img {
 .product-detail__side button:hover {
   background-color: var(--blue);
   color: var(--white);
+}
+
+.product-price {
+  color: #ff9900;
+  font-size: 2.5rem;
 }
 
 /* Categories */

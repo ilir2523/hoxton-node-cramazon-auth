@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
+
 function Header() {
+
   return (
     <header className="header"    >
       <div className="header__logo" >
@@ -27,14 +29,16 @@ function Header() {
       <nav className="header__icons">
         <ul>
           <li>
-            <img src="/src/images/search_white_24dp.svg"></img>
+            <Link to='/'> <img src="/src/images/search_white_24dp.svg"></img> </Link>
           </li>
           <li>
-            <img src="./src/images/account_circle_white_24dp.svg"></img>
+            <Link to='/signIn'> <img src="./src/images/account_circle_white_24dp.svg"></img> </Link>
           </li>
         </ul>
       </nav>
     </header>
   );
 }
+
+
 export default Header;
